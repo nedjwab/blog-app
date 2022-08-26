@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :likes
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :CommentCounter, :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   after_save :update_counter
 
@@ -12,6 +14,6 @@ class Post < ApplicationRecord
   private
 
   def update_counter
-    user.update(PostsCounter: user.posts.count)
+    user.increment!(:PostsCounter)
   end
 end
