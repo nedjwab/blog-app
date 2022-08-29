@@ -1,9 +1,5 @@
-class UserController < ActionController
-  def index
-    puts params
-  end
+class UsersController < ApplicationController
+  def index; end
 
-  def show
-    puts params
-  end
+  def show; end
 end
