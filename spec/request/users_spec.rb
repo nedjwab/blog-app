@@ -1,6 +1,6 @@
-require "rails_helper"
-RSpec.describe "User Controller", :type => :request do
-    describe 'The Index action' do
+require 'rails_helper'
+RSpec.describe 'User Controller', type: :request do
+  describe 'The Index action' do
     it 'should return an ok status ' do
       get '/users/'
       expect(response).to have_http_status(:ok)
