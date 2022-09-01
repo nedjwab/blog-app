@@ -1,1 +1,9 @@
-<h1>Users list</h1>
+<h1>The users List :</h1> 
+<div>
+  <% @users.each do |user| %>
+    <div class='user-container'>
+      <%= image_tag user.photo, :class => 'user-photo', alt: 'User photo' %>
+      <p>Number of posts: <%= user.PostsCounter.nil? ? 0 : user.user_posts %></p>
+    </div>
+  <% end %>
+</div>
