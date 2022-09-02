@@ -1,1 +1,19 @@
-<h1>the given users posts list </h1>
+<h1>Here is the list of posts:</h1>
+<div>
+<h2><%= @user.name %></h2>
+<p>Number of posts: <%=@user.PostsCounter.nil? ? 0 :@user.user_posts %></p>
+  <% @posts.each do |post| %>
+    <div class='post-card'>
+      <p><%= post.text %></p>
+      <div class='likes-comments'>
+        <p>Comments: <%= post.CommentCounter.nil? ? 0 : post.CommentCounter %></p>
+        <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
+      </div>
+    </div>
+    <div class='comments_cnt'>
+      <% post.five_recent_comments.each do |comment| %>
+        <p><%= User.find(comment.user_id).name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
