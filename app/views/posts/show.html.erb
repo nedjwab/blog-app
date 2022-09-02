@@ -1,1 +1,16 @@
-<h1>the given post details</h1>
+<h1>Here is the list of posts for a given user:</h1>
+<div class='post-card'>
+  <div class='post-header'>
+    <h3>"<%= @post.title %>" by: <%= User.find(@post.user_id).name %></h3>
+    <div class='likes-comments'>
+      <p>Comments: <%= @post.CommentCounter.nil? ? 0 : @post.CommentCounter %></p>
+      <p>Likes: <%= @post.LikesCounter.nil? ? 0 : @post.LikesCounter %></p>
+    </div>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+<div class='comments_cnt'>
+  <% @post.comments.each do |comment| %>
+    <p><%= User.find(comment.user_id).name %>: <%= comment.text %></p>
+  <% end %>
+</div>
