@@ -4,7 +4,7 @@
     <div class='user-info'> 
       <%= image_tag @user.photo, :class => 'user-photo', alt: 'User photo' %>
       <h2 class="user-name"><%= @user.name  %></h2>
-      <p>Number of posts: <%= @user.PostsCounter.nil? ? 0 : @user.user_posts.length %></p>
+      <p>Number of posts: <%= @user.PostsCounter.nil? ? 0 : @user.PostsCounter%></p>
       </div>
       <div class="bio">
       <h2>Bio</h2>
