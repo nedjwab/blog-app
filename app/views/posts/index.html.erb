@@ -10,7 +10,7 @@
         <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
       </div>
     </div>
-    <div class='comments_cnt'>
+    <div class='comments_user'>
       <% post.five_recent_comments.each do |comment| %>
         <p><%= User.find(comment.user_id).name %>: <%= comment.text %></p>
       <% end %>
