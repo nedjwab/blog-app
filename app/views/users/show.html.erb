@@ -1,1 +1,27 @@
-<h1>user profil</h1>
+<h1>The users profil</h1>
+<div>
+    <div class='user-container'>
+    <div class='user-info'> 
+      <%= image_tag @user.photo, :class => 'user-photo', alt: 'User photo' %>
+      <h2 class="user-name"><%= @user.name  %></h2>
+      <p>Number of posts: <%= @user.PostsCounter.nil? ? 0 : @user.PostsCounter%></p>
+      </div>
+      <div class="bio">
+      <h2>Bio</h2>
+      <p><%= @user.bio %></p>
+      </div>
+      <h1>Posts list</h1>
+      <% @user.user_posts.each do |post| %>
+        <div class='post-card'>
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <div class='likes-comments'>
+          <p>Comments: <%= post.CommentCounter.nil? ? 0 : post.CommentCounter %></p>
+          <p>Likes: <%= post.LikesCounter.nil? ? 0 : post.LikesCounter %></p>
+        </div>
+      </div>
+      <% end %>
+      <button><%=link_to 'See all posts', user_posts_path(@user), :class => 'all-btn'%></button>
+    </div>
+</div>
+

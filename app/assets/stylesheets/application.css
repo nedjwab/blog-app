@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+ .user-container {
+   display : felx;
+   flex-direction: column;
+ }
+ 
+ .user-info {
+    display :flex ;
+    flex-direction: row;
+    margin-bottom: 30px;
+ }
+
+ .user-photo {
+    width: 18%;
+ }
+
+ .user-name {
+    margin-left: 10px;
+    margin-right:210px;
+ }
+
+ .bio {
+    border: 1px solid black;
+    width:50%;
+ }
+
+ .post-card {
+    display: felx;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    width:50%;
+ }
+
+ .likes-comments {
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-left: 18px;
+ }
+
+ .comments_user {
+   border: 1px solid black;
+   width:50%;
+   margin-bottom: 10px;
+ }
+ 
+ .all-btn {
+   text-decoration: none;
+   color: black;
+   align-items: center;
+   padding: 10px;
+ }
