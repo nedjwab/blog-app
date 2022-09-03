@@ -34,3 +34,23 @@
     margin-right:210px;
  }
 
+ .bio {
+    border: 1px solid black;
+    width:50%;
+ }
+
+ .post-card {
+    display: felx;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    width:50%;
+ }
+
+ .likes-comments {
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-left: 18px;
+ }
