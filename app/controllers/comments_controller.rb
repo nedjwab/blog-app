@@ -1,10 +1,16 @@
 class CommentsController < ApplicationController
-  def add_comment
-    @user = current_user
-    @post = Post.find(params[:user_id])
-    @comment = current_user.comments.new(text: params[:comment])
-    @comment.post_id = @post.id
-    @comment.save
-    redirect_to user_post_url(@user, @post)
+  def new
+    @comment = Comment.new
+  end
+
+  def create
+    @comment = Comment.new(comment_params)
+    redirect_to user_posts_path(id: @comment.post_id, user_id: @comment.user_id) if @comment.save
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text, :user_id, :post_id)
   end
 end
