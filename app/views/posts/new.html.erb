@@ -1,0 +1,7 @@
+<h1>Create new post</h1>
+
+<%= form_with model: @post, url: post_new_path, method: :post, local: true, data: {turbo: false} do |f| %>
+  <%= f.text_field :title, placeholder: "title" %> <br><br>
+  <%= f.text_area :text, placeholder: "text" %><br><br>
+  <%= f.submit %>
+<% end %>
