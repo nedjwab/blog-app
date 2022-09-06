@@ -3,7 +3,7 @@
   <% @users.each do |user| %>
     <div class='user-contlll nbghuuainer'>
     <div class='user-info'> 
-      <%= image_tag user.photo, :class => 'user-photo', alt: 'User photo' %>
+    <span><%= image_tag user.photo, :class => 'user-photo', alt: 'User photo' %></span>
       <h2><%= link_to user.name, user, :class => 'user-name' %></h2>
       <p class='user-postcounter'>Number of posts: <%= user.PostsCounter.nil? ? 0 : user.PostsCounter %></p>
     </div>
