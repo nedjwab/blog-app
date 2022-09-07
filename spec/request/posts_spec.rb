@@ -1,36 +1,29 @@
 require 'rails_helper'
-RSpec.describe 'Posts Controller', type: :request do
-  describe 'The Index action' do
-    it 'should return an ok status ' do
-      get '/users/:id/posts/'
-      expect(response).to have_http_status(:ok)
+
+RSpec.describe 'Posts', type: :request do
+  before(:each) do
+    before :each do
+      @user = User.create(
+        name: 'Tom',
+        photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+        bio: 'Teacher from Mexico.'
+      )
+      @post = Post.create(user: @user, title: 'title', text: 'text')
     end
 
-    it 'should return the index template' do
-      get '/users/:id/posts/'
-      expect(response).to render_template('index')
+    describe 'GET index' do
+      it 'renders index' do
+        get :index, params: { user_id: @user.id }
+        expect(response.status).to eq(200)
+        expect(response).to render_template('index')
+      end
     end
-
-    it 'should return the the given users posts list' do
-      get '/users/:id/posts/'
-      expect(response.body).to include('the given users posts list')
-    end
-  end
-
-  describe 'The show action' do
-    it 'should return an ok status ' do
-      get '/users/:id/posts/:id'
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'should return the index template' do
-      get '/users/:id/posts/:id'
-      expect(response).to render_template('show')
-    end
-
-    it 'should return the given post details' do
-      get '/users/:id/posts/:id'
-      expect(response.body).to include('the given post details')
+    describe 'GET show' do
+      it 'renders show' do
+        get :show, params: { id: @post.id, user_id: @user.id }
+        expect(response.status).to eq(200)
+        expect(response).to render_template('show')
+      end
     end
   end
 end
