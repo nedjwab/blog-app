@@ -13,6 +13,7 @@
       <h1>Posts list</h1>
       <% @user.user_posts.each do |post| %>
         <div class='post-card'>
+        <span><%= image_tag @user.photo, :class => 'user-photo', alt: 'User photo' %></span>
         <h3><%= post.title %></h3>
         <p><%= post.text %></p>
         <div class='likes-comments'>

@@ -18,6 +18,8 @@ gem 'puma', '~> 5.0'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
+gem 'bullet'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'ffi'
 gem 'turbo-rails'
@@ -76,5 +78,6 @@ group :test do
 end
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec-rails', '>= 3.9.0'
 end

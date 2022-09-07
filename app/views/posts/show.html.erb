@@ -1,7 +1,7 @@
 <h1>Here is the list of posts for a given user:</h1>
 <div class='post-card'>
   <div class='post-header'>
-    <h3>"<%= @post.title %>" by: <%= User.find(@post.user_id).name %></h3>
+    <h3>"<%= @post.title %> by: <%= User.find(@post.user_id).name %>"</h3>
     <p><%= @post.text %></p>
     <div class='likes-comments'>
       <p>Comments: <%= @post.CommentCounter.nil? ? 0 : @post.CommentCounter %></p>
