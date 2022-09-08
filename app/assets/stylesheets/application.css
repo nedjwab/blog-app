@@ -67,3 +67,30 @@
    align-items: center;
    padding: 10px;
  }
+
+ .submit-button {
+   width:91%;
+   padding :7px; 
+   background-color: white;
+   margin: 10px;
+ }
+
+ .submit-field {
+   width:90%;
+   padding :7px; 
+   margin: 10px;
+ }
+
+ .user-form {
+   display: felx;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .submit-label {
+   margin: 10px; 
+ }
+  
+ .title {
+   text-align: center;
+ }

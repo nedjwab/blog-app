@@ -1,35 +1,35 @@
-<h2>Sign up</h2>
+<h2 class="title">Sign up</h2>
 
-<%= form_for(resource,data: { turbo: false }, as: resource_name, url: registration_path(resource_name))  do |f| %>
+<%= form_for(resource,data: { turbo: false },:class => 'user-form', as: resource_name, url: registration_path(resource_name))  do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email ,:class => 'submit-label' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",:class => 'submit-field' %>
   </div>
 
   <div>
-  <%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true %>
+  <%= f.label :name ,:class => 'submit-label' %><br />
+  <%= f.text_field :name, autofocus: true ,:class => 'submit-field'%>
   </div>
 
   <%= f.hidden_field :PostsCounter, value: 0 %>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password ,:class => 'submit-label' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",:class => 'submit-field' %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation,:class => 'submit-label' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",:class => 'submit-field' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up" ,:class => 'submit-button' %>
   </div>
 <% end %>
 
