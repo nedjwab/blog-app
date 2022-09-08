@@ -11,6 +11,7 @@ gem 'sprockets-rails'
 
 # Use pg as the database for Active Record
 gem 'devise'
+gem 'cancancan'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
