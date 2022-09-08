@@ -61,7 +61,6 @@ Rails.application.configure do
 
   #Enable devise authetification
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :letter_opener
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
