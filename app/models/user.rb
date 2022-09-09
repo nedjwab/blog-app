@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def user_posts
     posts.includes(:user).order(created_at: :desc).limit(3)
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
