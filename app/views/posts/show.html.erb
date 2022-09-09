@@ -8,6 +8,9 @@
       <p>Likes: <%= @post.LikesCounter.nil? ? 0 : @post.LikesCounter %></p>
     </div>
   </div>
+  <% if can? :destroy, @post %>
+  <%= button_to "Delete Post", user_post_path(@post.user, @post), method: :delete, class: "btn btn-outline-danger btn-lg btn-block" %>
+<% end %>
 </div>
 <div class='comments_user'>
   <% @post.comments.each do |comment| %>
