@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @user = current_user
+    @post = @user.posts.new
     @params = params
   end
 
