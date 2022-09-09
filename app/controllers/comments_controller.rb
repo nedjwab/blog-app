@@ -14,11 +14,9 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:text, :user_id, :post_id)
   end
 
-  
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to user_post_path(current_user, params[:post_id]), notice: 'Successfully removed the comment.'
   end
-
 end
